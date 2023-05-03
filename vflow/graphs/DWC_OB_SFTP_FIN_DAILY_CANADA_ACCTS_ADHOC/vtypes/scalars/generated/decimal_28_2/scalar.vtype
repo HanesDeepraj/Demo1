@@ -1,0 +1,8 @@
+{
+	"name": "generated.decimal_28_2",
+	"description": "Decimal(28,2)",
+	"vflow.type": "scalar",
+	"template": "decimal",
+	"value.precision": 28,
+	"value.scale": 2
+}

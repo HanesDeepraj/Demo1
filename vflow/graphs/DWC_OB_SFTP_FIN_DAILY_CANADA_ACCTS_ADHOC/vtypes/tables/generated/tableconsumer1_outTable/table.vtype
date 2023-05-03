@@ -1,0 +1,93 @@
+{
+	"name": "generated.tableconsumer1_outTable",
+	"description": "auto-generated generated.tableconsumer1_outTable",
+	"vflow.type": "table",
+	"rows": {
+		"components": [
+			{
+				"BELNR": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"KUNNR": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"BUDAT": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.date"
+				}
+			},
+			{
+				"NETDT": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.date"
+				}
+			},
+			{
+				"WSL": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_28_2"
+				}
+			},
+			{
+				"AWREF": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"CUSTOMERNAME": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_80"
+				}
+			},
+			{
+				"STREETNAME": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_35"
+				}
+			},
+			{
+				"CITYNAME": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_35"
+				}
+			},
+			{
+				"BPEXT": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_20"
+				}
+			},
+			{
+				"REGION": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_3"
+				}
+			},
+			{
+				"POSTALCODE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"TELEPHONENUMBER1": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_16"
+				}
+			},
+			{
+				"SMTP_ADDR": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_241"
+				}
+			}
+		]
+	}
+}

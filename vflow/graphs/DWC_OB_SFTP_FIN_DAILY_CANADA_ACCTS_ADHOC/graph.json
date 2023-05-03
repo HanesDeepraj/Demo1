@@ -1,0 +1,894 @@
+{
+    "properties": {},
+    "description": "FIN - AR Canadelle Feed Interface Adhoc",
+    "processes": {
+        "tableconsumer1": {
+            "component": "com.sap.database.table.consumer.v2",
+            "metadata": {
+                "label": "Table Consumer",
+                "x": 17,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "extensible": false,
+                "generation": 1,
+                "config": {
+                    "service": "HANA_DB",
+                    "partitionType": "None",
+                    "serviceConnection": {
+                        "configurationType": "Configuration Manager",
+                        "connectionID": "DWC_TO_DI_TD_STG_DEV"
+                    },
+                    "source": {
+                        "remoteObjectReference": {
+                            "connection": {
+                                "id": "DWC_TO_DI_TD_STG_DEV",
+                                "type": "HANA_DB"
+                            },
+                            "name": "PL_FIN_DAILY_CANADA_ACCTS_INF",
+                            "remoteObjectType": "VIEW",
+                            "qualifiedName": "/TD_STG_DEV/PL_FIN_DAILY_CANADA_ACCTS_INF",
+                            "nativeQualifiedName": "\"TD_STG_DEV\".\"PL_FIN_DAILY_CANADA_ACCTS_INF\"",
+                            "owner": "TD_STG_DEV"
+                        },
+                        "schema": {
+                            "genericType": "TABLE",
+                            "tableBasedRepresentation": {
+                                "attributes": []
+                            }
+                        },
+                        "capabilityProperties": [
+                            {
+                                "name": "isProfileable",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                },
+                "outports": [
+                    {
+                        "name": "outTable",
+                        "type": "table",
+                        "vtype-ID": "$GRAPH.generated.tableconsumer1_outTable"
+                    }
+                ]
+            }
+        },
+        "datatransform1": {
+            "component": "com.sap.datatransform",
+            "metadata": {
+                "label": "Data Transform",
+                "x": 186,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "extensible": false,
+                "generation": 1,
+                "config": {
+                    "definition": {
+                        "nodeType": "ContainerNode",
+                        "inputs": [
+                            {
+                                "id": "d8708bd6-bc16-476e-a7ff-d4cd318a4c09",
+                                "nodeType": "InPort",
+                                "name": "input1",
+                                "attributes": [
+                                    {
+                                        "id": "5bf5fb27-7b2e-4fd3-8526-40cd4622f52b",
+                                        "name": "BUDAT",
+                                        "datatype": "date",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "e99eb0d2-e94b-4a07-9b2a-8622b44d09cb",
+                                        "name": "NETDT",
+                                        "datatype": "date",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "fb6f501b-f8f5-4420-9900-e859b3439358",
+                                        "name": "WSL",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 28,
+                                        "scale": 2
+                                    },
+                                    {
+                                        "id": "fa6625cb-f302-4436-9afe-036257dabc60",
+                                        "name": "BELNR",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "2f10891b-ef0c-4e09-9871-311335e42b61",
+                                        "name": "KUNNR",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "c5e957b3-2ea8-4f7b-bd39-33d9d95c364f",
+                                        "name": "AWREF",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "5bd8c407-5390-4455-ba0a-5b523aee7144",
+                                        "name": "CUSTOMERNAME",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 80
+                                    },
+                                    {
+                                        "id": "fd2d43e9-1f0f-4e55-bc98-9070c7258e4f",
+                                        "name": "STREETNAME",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 35
+                                    },
+                                    {
+                                        "id": "1a9329b5-5ecb-452c-bfe2-05e50524fc67",
+                                        "name": "CITYNAME",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 35
+                                    },
+                                    {
+                                        "id": "91fb024d-b70b-47af-9174-ff044f9c895a",
+                                        "name": "BPEXT",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 20
+                                    },
+                                    {
+                                        "id": "ca2ffc12-5ac0-48d2-a2ff-58361df357a2",
+                                        "name": "REGION",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 3
+                                    },
+                                    {
+                                        "id": "1868dd03-fb82-4aa2-a67b-7d8985ca3418",
+                                        "name": "POSTALCODE",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "8da3b4bb-cdd8-4015-9661-43fed8d3fa96",
+                                        "name": "TELEPHONENUMBER1",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 16
+                                    },
+                                    {
+                                        "id": "7dcbdb09-28d9-476b-90a3-6d27db85a18e",
+                                        "name": "SMTP_ADDR",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 241
+                                    }
+                                ],
+                                "UILayout": {
+                                    "x": 12,
+                                    "y": 132,
+                                    "height": 80,
+                                    "width": 80
+                                }
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "id": "d72b2d2e-3e84-42ea-ad55-9bffa0c8c6e1",
+                                "nodeType": "OutPort",
+                                "name": "Output1",
+                                "attributes": [
+                                    {
+                                        "id": "c8364e42-8dd1-4a67-8316-27a11b3ecfa3",
+                                        "name": "Customer Number",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "7fe61526-2726-4b00-b204-2cb770b5d5b4",
+                                        "name": "Medium Description",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 80
+                                    },
+                                    {
+                                        "id": "94420cae-2cb4-41b2-80e1-68e60abffafe",
+                                        "name": "House Number and Street",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 35
+                                    },
+                                    {
+                                        "id": "340bcf52-cb3d-4b32-96d0-2052c6a91ebe",
+                                        "name": "Location",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 35
+                                    },
+                                    {
+                                        "id": "7281591d-6d1c-4672-84b9-9a67d1ab3955",
+                                        "name": "Region (State, Province, County)",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 3
+                                    },
+                                    {
+                                        "id": "93e6f1fa-c161-4c77-8469-ab2c28c632ba",
+                                        "name": "Postal Code",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "ad3435a0-c487-4a71-8274-d96a7e37c9f4",
+                                        "name": "Accounting Document Number",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "b315ed25-6cb2-4cd7-af49-c3c99b916430",
+                                        "name": "Posting Date in the Document",
+                                        "datatype": "date",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "87922d8a-9d28-42a7-b96a-0bc883032360",
+                                        "name": "Due Date for Net Payment",
+                                        "datatype": "date",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "64370e21-a0e3-4792-ab27-c2a0335c6d9b",
+                                        "name": "Foreign Currency Amount with signs (+/-)",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 28,
+                                        "scale": 2
+                                    },
+                                    {
+                                        "id": "facfe215-1011-4eb2-aa6d-b0c4bffd3b4c",
+                                        "name": "First Telephone Number",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 16
+                                    },
+                                    {
+                                        "id": "6630e47d-9ade-4bb8-a2b1-f429088be2ca",
+                                        "name": "Email ID of the Contact",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 241
+                                    },
+                                    {
+                                        "id": "780d7c51-c328-469d-896c-4866392ee4bb",
+                                        "name": "Ref Document",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "73285e28-393f-4e56-b18e-591bde2465ba",
+                                        "name": "AFS Customer Number",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 20
+                                    }
+                                ],
+                                "mode": "OVERWRITE",
+                                "UILayout": {
+                                    "x": 391,
+                                    "y": 92,
+                                    "height": 80,
+                                    "width": 80
+                                }
+                            }
+                        ],
+                        "nodes": [
+                            {
+                                "id": "514a485b-1e57-4dc5-a21c-3db3a74897a9",
+                                "type": "FilterNode",
+                                "nodeType": "FilterNode",
+                                "name": "Projection",
+                                "inputs": [
+                                    {
+                                        "id": "319fdd86-4d16-4fbf-9f6a-a77995f5fc30",
+                                        "name": "Projection_Input1",
+                                        "attributes": [
+                                            {
+                                                "id": "5e47f4c5-af4f-4fc0-a855-d87f4d74bd7a",
+                                                "name": "BUDAT",
+                                                "datatype": "date",
+                                                "nullable": false
+                                            },
+                                            {
+                                                "id": "2441da9b-6f04-48ea-98eb-252713d9adc3",
+                                                "name": "NETDT",
+                                                "datatype": "date",
+                                                "nullable": false
+                                            },
+                                            {
+                                                "id": "9005c7dc-4f60-43e8-8879-f021b8abb097",
+                                                "name": "WSL",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 28,
+                                                "scale": 2
+                                            },
+                                            {
+                                                "id": "d84e08f2-0430-4235-9e51-f3d102d4d2d4",
+                                                "name": "BELNR",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10
+                                            },
+                                            {
+                                                "id": "be508f07-8f90-4e8c-96bb-4eebc7606858",
+                                                "name": "KUNNR",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10
+                                            },
+                                            {
+                                                "id": "b3b2aae4-92ec-4f79-8d45-3f9b9de442a9",
+                                                "name": "AWREF",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10
+                                            },
+                                            {
+                                                "id": "d8c813f5-1103-4f43-a5b2-05511ec4cc5d",
+                                                "name": "CUSTOMERNAME",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 80
+                                            },
+                                            {
+                                                "id": "bd29ab51-5512-4d71-adc8-d4e2b50940d8",
+                                                "name": "STREETNAME",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 35
+                                            },
+                                            {
+                                                "id": "2f42fd17-dae6-4c85-85c2-48fd9242fadb",
+                                                "name": "CITYNAME",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 35
+                                            },
+                                            {
+                                                "id": "745b1881-7282-4370-aa68-4cc86168cc1e",
+                                                "name": "BPEXT",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 20
+                                            },
+                                            {
+                                                "id": "b19fd370-4c88-467c-80c6-78fa0b2c6032",
+                                                "name": "REGION",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 3
+                                            },
+                                            {
+                                                "id": "36ac4f00-0e10-41a3-b8ce-18730dd31ee4",
+                                                "name": "POSTALCODE",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10
+                                            },
+                                            {
+                                                "id": "f88f16c3-b8b8-4b8c-b3b9-b955da3e93dd",
+                                                "name": "TELEPHONENUMBER1",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 16
+                                            },
+                                            {
+                                                "id": "19c67f50-82e5-411a-a942-16416c8d9ca2",
+                                                "name": "SMTP_ADDR",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 241
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "id": "afd23618-a7e0-497e-abab-06d66f6c3ba7",
+                                        "name": "Projection_Output1",
+                                        "attributes": [
+                                            {
+                                                "id": "902d895e-ed69-4072-9f1a-8f50109fe56b",
+                                                "name": "Customer Number",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10,
+                                                "expression": "\"KUNNR\""
+                                            },
+                                            {
+                                                "id": "91a0e23e-ad05-4349-8ffd-046ab9c3ea33",
+                                                "name": "Medium Description",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 80,
+                                                "expression": "\"CUSTOMERNAME\""
+                                            },
+                                            {
+                                                "id": "4f77b147-794b-4d4c-9dac-ee24d47a4ad9",
+                                                "name": "House Number and Street",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 35,
+                                                "expression": "\"STREETNAME\""
+                                            },
+                                            {
+                                                "id": "a29649c1-206a-4bb4-bacc-da45120b4abf",
+                                                "name": "Location",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 35,
+                                                "expression": "\"CITYNAME\""
+                                            },
+                                            {
+                                                "id": "c385b839-2458-4367-9032-dadaaad34a5f",
+                                                "name": "Region (State, Province, County)",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 3,
+                                                "expression": "\"REGION\""
+                                            },
+                                            {
+                                                "id": "d7f35b8c-c447-40c0-b90d-5ea9709aceae",
+                                                "name": "Postal Code",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10,
+                                                "expression": "\"POSTALCODE\""
+                                            },
+                                            {
+                                                "id": "131e707b-967b-40c0-9508-2ff65489da68",
+                                                "name": "Accounting Document Number",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10,
+                                                "expression": "\"BELNR\""
+                                            },
+                                            {
+                                                "id": "33002b7a-3aed-4ce1-a087-bdcdfc581029",
+                                                "name": "Posting Date in the Document",
+                                                "datatype": "date",
+                                                "nullable": false,
+                                                "expression": "\"BUDAT\""
+                                            },
+                                            {
+                                                "id": "c120fb9d-5278-4ee3-9c3e-86a99e277ada",
+                                                "name": "Due Date for Net Payment",
+                                                "datatype": "date",
+                                                "nullable": false,
+                                                "expression": "\"NETDT\""
+                                            },
+                                            {
+                                                "id": "3ca4f233-5db9-4309-8d44-d469d5c8b05b",
+                                                "name": "Foreign Currency Amount with signs (+/-)",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 28,
+                                                "scale": 2,
+                                                "expression": "\"WSL\""
+                                            },
+                                            {
+                                                "id": "39dedc6c-9748-4200-8104-8edaa8314c12",
+                                                "name": "First Telephone Number",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 16,
+                                                "expression": "\"TELEPHONENUMBER1\""
+                                            },
+                                            {
+                                                "id": "9acd9125-eb72-452d-836f-8208d794694c",
+                                                "name": "Email ID of the Contact",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 241,
+                                                "expression": "\"SMTP_ADDR\""
+                                            },
+                                            {
+                                                "id": "bf5c22a4-15c4-4617-b2f2-4c40ee832f31",
+                                                "name": "Ref Document",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10,
+                                                "expression": "\"AWREF\""
+                                            },
+                                            {
+                                                "id": "5aceedd8-5899-4fb3-a62a-6f4bdaba73d2",
+                                                "name": "AFS Customer Number",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 20,
+                                                "expression": "\"BPEXT\""
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "UILayout": {
+                                    "x": 157.99999904632568,
+                                    "y": 72,
+                                    "height": 80,
+                                    "width": 120
+                                }
+                            }
+                        ],
+                        "tableMappings": [
+                            {
+                                "source": "d8708bd6-bc16-476e-a7ff-d4cd318a4c09",
+                                "target": "319fdd86-4d16-4fbf-9f6a-a77995f5fc30",
+                                "attributeMappings": [
+                                    {
+                                        "source": "5bf5fb27-7b2e-4fd3-8526-40cd4622f52b",
+                                        "target": "5e47f4c5-af4f-4fc0-a855-d87f4d74bd7a"
+                                    },
+                                    {
+                                        "source": "e99eb0d2-e94b-4a07-9b2a-8622b44d09cb",
+                                        "target": "2441da9b-6f04-48ea-98eb-252713d9adc3"
+                                    },
+                                    {
+                                        "source": "fb6f501b-f8f5-4420-9900-e859b3439358",
+                                        "target": "9005c7dc-4f60-43e8-8879-f021b8abb097"
+                                    },
+                                    {
+                                        "source": "fa6625cb-f302-4436-9afe-036257dabc60",
+                                        "target": "d84e08f2-0430-4235-9e51-f3d102d4d2d4"
+                                    },
+                                    {
+                                        "source": "2f10891b-ef0c-4e09-9871-311335e42b61",
+                                        "target": "be508f07-8f90-4e8c-96bb-4eebc7606858"
+                                    },
+                                    {
+                                        "source": "c5e957b3-2ea8-4f7b-bd39-33d9d95c364f",
+                                        "target": "b3b2aae4-92ec-4f79-8d45-3f9b9de442a9"
+                                    },
+                                    {
+                                        "source": "5bd8c407-5390-4455-ba0a-5b523aee7144",
+                                        "target": "d8c813f5-1103-4f43-a5b2-05511ec4cc5d"
+                                    },
+                                    {
+                                        "source": "fd2d43e9-1f0f-4e55-bc98-9070c7258e4f",
+                                        "target": "bd29ab51-5512-4d71-adc8-d4e2b50940d8"
+                                    },
+                                    {
+                                        "source": "1a9329b5-5ecb-452c-bfe2-05e50524fc67",
+                                        "target": "2f42fd17-dae6-4c85-85c2-48fd9242fadb"
+                                    },
+                                    {
+                                        "source": "91fb024d-b70b-47af-9174-ff044f9c895a",
+                                        "target": "745b1881-7282-4370-aa68-4cc86168cc1e"
+                                    },
+                                    {
+                                        "source": "ca2ffc12-5ac0-48d2-a2ff-58361df357a2",
+                                        "target": "b19fd370-4c88-467c-80c6-78fa0b2c6032"
+                                    },
+                                    {
+                                        "source": "1868dd03-fb82-4aa2-a67b-7d8985ca3418",
+                                        "target": "36ac4f00-0e10-41a3-b8ce-18730dd31ee4"
+                                    },
+                                    {
+                                        "source": "8da3b4bb-cdd8-4015-9661-43fed8d3fa96",
+                                        "target": "f88f16c3-b8b8-4b8c-b3b9-b955da3e93dd"
+                                    },
+                                    {
+                                        "source": "7dcbdb09-28d9-476b-90a3-6d27db85a18e",
+                                        "target": "19c67f50-82e5-411a-a942-16416c8d9ca2"
+                                    }
+                                ],
+                                "UILayout": {
+                                    "points": "92,172 125,172 125,112 157.99999904632568,112"
+                                }
+                            },
+                            {
+                                "source": "afd23618-a7e0-497e-abab-06d66f6c3ba7",
+                                "target": "d72b2d2e-3e84-42ea-ad55-9bffa0c8c6e1",
+                                "attributeMappings": [
+                                    {
+                                        "source": "902d895e-ed69-4072-9f1a-8f50109fe56b",
+                                        "target": "c8364e42-8dd1-4a67-8316-27a11b3ecfa3"
+                                    },
+                                    {
+                                        "source": "91a0e23e-ad05-4349-8ffd-046ab9c3ea33",
+                                        "target": "7fe61526-2726-4b00-b204-2cb770b5d5b4"
+                                    },
+                                    {
+                                        "source": "4f77b147-794b-4d4c-9dac-ee24d47a4ad9",
+                                        "target": "94420cae-2cb4-41b2-80e1-68e60abffafe"
+                                    },
+                                    {
+                                        "source": "a29649c1-206a-4bb4-bacc-da45120b4abf",
+                                        "target": "340bcf52-cb3d-4b32-96d0-2052c6a91ebe"
+                                    },
+                                    {
+                                        "source": "c385b839-2458-4367-9032-dadaaad34a5f",
+                                        "target": "7281591d-6d1c-4672-84b9-9a67d1ab3955"
+                                    },
+                                    {
+                                        "source": "d7f35b8c-c447-40c0-b90d-5ea9709aceae",
+                                        "target": "93e6f1fa-c161-4c77-8469-ab2c28c632ba"
+                                    },
+                                    {
+                                        "source": "131e707b-967b-40c0-9508-2ff65489da68",
+                                        "target": "ad3435a0-c487-4a71-8274-d96a7e37c9f4"
+                                    },
+                                    {
+                                        "source": "33002b7a-3aed-4ce1-a087-bdcdfc581029",
+                                        "target": "b315ed25-6cb2-4cd7-af49-c3c99b916430"
+                                    },
+                                    {
+                                        "source": "c120fb9d-5278-4ee3-9c3e-86a99e277ada",
+                                        "target": "87922d8a-9d28-42a7-b96a-0bc883032360"
+                                    },
+                                    {
+                                        "source": "3ca4f233-5db9-4309-8d44-d469d5c8b05b",
+                                        "target": "64370e21-a0e3-4792-ab27-c2a0335c6d9b"
+                                    },
+                                    {
+                                        "source": "39dedc6c-9748-4200-8104-8edaa8314c12",
+                                        "target": "facfe215-1011-4eb2-aa6d-b0c4bffd3b4c"
+                                    },
+                                    {
+                                        "source": "9acd9125-eb72-452d-836f-8208d794694c",
+                                        "target": "6630e47d-9ade-4bb8-a2b1-f429088be2ca"
+                                    },
+                                    {
+                                        "source": "bf5c22a4-15c4-4617-b2f2-4c40ee832f31",
+                                        "target": "780d7c51-c328-469d-896c-4866392ee4bb"
+                                    },
+                                    {
+                                        "source": "5aceedd8-5899-4fb3-a62a-6f4bdaba73d2",
+                                        "target": "73285e28-393f-4e56-b18e-591bde2465ba"
+                                    }
+                                ],
+                                "UILayout": {
+                                    "points": "277.9999990463257,112 334.5,112 334.5,132 391,132"
+                                }
+                            }
+                        ],
+                        "invalidMappings": []
+                    }
+                },
+                "additionalinports": [
+                    {
+                        "name": "input1",
+                        "type": "table",
+                        "isPropagated": true,
+                        "vtype-ID": "$GRAPH.generated.tableconsumer1_outTable"
+                    }
+                ],
+                "additionaloutports": [
+                    {
+                        "name": "Output1",
+                        "type": "table",
+                        "vtype-ID": "$GRAPH.generated.datatransform1_Output1"
+                    }
+                ]
+            }
+        },
+        "tabletomessageconverter1": {
+            "component": "com.sap.util.tableToMessageConverter",
+            "metadata": {
+                "label": "Table To Message Converter",
+                "x": 355,
+                "y": 27,
+                "height": 50,
+                "width": 50,
+                "extensible": false,
+                "generation": 1,
+                "config": {
+                    "additionalProperties_csv": {
+                        "columnDelimiter": "|",
+                        "textDelimiterStyle": "Always",
+                        "csvHeaderIncluded": false
+                    },
+                    "forceBatchSize": true
+                },
+                "inports": [
+                    {
+                        "name": "inTable",
+                        "type": "table",
+                        "isPropagated": true,
+                        "vtype-ID": "$GRAPH.generated.datatransform1_Output1"
+                    }
+                ]
+            }
+        },
+        "wiretap1": {
+            "component": "com.sap.util.wiretap",
+            "metadata": {
+                "label": "Wiretap",
+                "x": 454,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "ui": "dynpath",
+                "config": {
+                    "disabled": false
+                }
+            }
+        },
+        "tofile1": {
+            "component": "com.sap.file.toFile",
+            "metadata": {
+                "label": "To File",
+                "x": 638.9999990463257,
+                "y": 27,
+                "height": 50,
+                "width": 50,
+                "generation": 1,
+                "config": {}
+            }
+        },
+        "writefile1": {
+            "component": "com.sap.file.write",
+            "metadata": {
+                "label": "Actual File",
+                "x": 737.9999990463257,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "config": {
+                    "connection": {
+                        "configurationType": "Connection Management",
+                        "connectionID": "DI_TO_SFTP"
+                    },
+                    "pathMode": "Static (from configuration)",
+                    "path": "/Dev/DWC_Z_SAP_DAILY_CANADA_ACCTS.TXT",
+                    "mode": "Overwrite",
+                    "joinBatches": true
+                }
+            }
+        },
+        "workflowterminator1": {
+            "component": "com.sap.dh.terminator",
+            "metadata": {
+                "label": "Workflow Terminator",
+                "x": 1107.999997138977,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "config": {}
+            }
+        },
+        "writefile2": {
+            "component": "com.sap.file.write",
+            "metadata": {
+                "label": "Sample File",
+                "x": 922.9999980926514,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "config": {
+                    "connection": {
+                        "configurationType": "Connection Management",
+                        "connectionID": "DI_TO_SFTP"
+                    },
+                    "pathMode": "Static (from configuration)",
+                    "path": "/Dev/DWC_Z_SAP_DAILY_CANADA_ACCTS.trg",
+                    "mode": "Overwrite",
+                    "joinBatches": false
+                }
+            }
+        }
+    },
+    "groups": [],
+    "connections": [
+        {
+            "metadata": {
+                "points": "141,52 181,52"
+            },
+            "src": {
+                "port": "outTable",
+                "process": "tableconsumer1"
+            },
+            "tgt": {
+                "port": "input1",
+                "process": "datatransform1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "310,52 350,52"
+            },
+            "src": {
+                "port": "Output1",
+                "process": "datatransform1"
+            },
+            "tgt": {
+                "port": "inTable",
+                "process": "tabletomessageconverter1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "409,52 449,52"
+            },
+            "src": {
+                "port": "outMessage",
+                "process": "tabletomessageconverter1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "wiretap1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "692.9999990463257,52 732.9999990463257,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "tofile1"
+            },
+            "tgt": {
+                "port": "file",
+                "process": "writefile1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "861.9999990463257,43 889.9999985694885,43 889.9999985694885,52 917.9999980926514,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "writefile1"
+            },
+            "tgt": {
+                "port": "file",
+                "process": "writefile2"
+            }
+        },
+        {
+            "metadata": {
+                "points": "578,52 605.9999995231628,52 605.9999995231628,61 633.9999990463257,61"
+            },
+            "src": {
+                "port": "out",
+                "process": "wiretap1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "tofile1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "1046.9999980926514,43 1074.9999976158142,43 1074.9999976158142,52 1102.999997138977,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "writefile2"
+            },
+            "tgt": {
+                "port": "stop",
+                "process": "workflowterminator1"
+            }
+        }
+    ],
+    "inports": {},
+    "outports": {},
+    "metadata": {
+        "generation": 1
+    }
+}

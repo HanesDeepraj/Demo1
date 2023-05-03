@@ -1,0 +1,93 @@
+{
+	"name": "generated.datatransform1_Output1",
+	"description": "auto-generated",
+	"vflow.type": "table",
+	"rows": {
+		"components": [
+			{
+				"Customer Number": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"Medium Description": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_80"
+				}
+			},
+			{
+				"House Number and Street": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_35"
+				}
+			},
+			{
+				"Location": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_35"
+				}
+			},
+			{
+				"Region (State, Province, County)": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_3"
+				}
+			},
+			{
+				"Postal Code": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"Accounting Document Number": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"Posting Date in the Document": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.date"
+				}
+			},
+			{
+				"Due Date for Net Payment": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.date"
+				}
+			},
+			{
+				"Foreign Currency Amount with signs (+/-)": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_28_2"
+				}
+			},
+			{
+				"First Telephone Number": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_16"
+				}
+			},
+			{
+				"Email ID of the Contact": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_241"
+				}
+			},
+			{
+				"Ref Document": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"AFS Customer Number": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_20"
+				}
+			}
+		]
+	}
+}
