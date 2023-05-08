@@ -1,0 +1,147 @@
+{
+	"name": "generated.datatransform1_output1",
+	"description": "auto-generated",
+	"vflow.type": "table",
+	"rows": {
+		"components": [
+			{
+				"PO Number": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"PO Item": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_5"
+				}
+			},
+			{
+				"PO Schedule Line": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_4"
+				}
+			},
+			{
+				"Purchasing Doc. Type": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_4"
+				}
+			},
+			{
+				"Material": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_40"
+				}
+			},
+			{
+				"Supplying Plant": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"Plant": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_4"
+				}
+			},
+			{
+				"Created On": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_8"
+				}
+			},
+			{
+				"Requested Del Date": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_8"
+				}
+			},
+			{
+				"Document Date": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_8"
+				}
+			},
+			{
+				"Order Qty": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_17_3"
+				}
+			},
+			{
+				"Delivered Quantity": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_17_3"
+				}
+			},
+			{
+				"Shipped Quantity": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_17_3"
+				}
+			},
+			{
+				"Goods Received Qty": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_17_3"
+				}
+			},
+			{
+				"Order Value": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_17_2"
+				}
+			},
+			{
+				"Record Counter": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.int32"
+				}
+			},
+			{
+				"Order for Reason": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_3"
+				}
+			},
+			{
+				"Cancel Reason": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"Delivery Completed": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_1"
+				}
+			},
+			{
+				"Deletion Indicator": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_1"
+				}
+			},
+			{
+				"Goods Issue Date": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_8"
+				}
+			},
+			{
+				"Sales Organization": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_4"
+				}
+			},
+			{
+				"Assigned Quantity by ARun": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_22_3"
+				}
+			}
+		]
+	}
+}

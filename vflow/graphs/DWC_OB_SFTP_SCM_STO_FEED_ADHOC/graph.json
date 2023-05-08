@@ -1,0 +1,1266 @@
+{
+    "properties": {},
+    "description": "SCM STO Feed Interface Adhoc",
+    "processes": {
+        "tableconsumer1": {
+            "component": "com.sap.database.table.consumer.v2",
+            "metadata": {
+                "label": "Table Consumer",
+                "x": 17,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "extensible": false,
+                "generation": 1,
+                "config": {
+                    "service": "HANA_DB",
+                    "partitionType": "None",
+                    "serviceConnection": {
+                        "configurationType": "Configuration Manager",
+                        "connectionID": "DWC_TO_DI_TD_STG_DEV"
+                    },
+                    "source": {
+                        "remoteObjectReference": {
+                            "connection": {
+                                "id": "DWC_TO_DI_TD_STG_DEV",
+                                "type": "HANA_DB"
+                            },
+                            "name": "PL_SCMSTO_INF",
+                            "remoteObjectType": "VIEW",
+                            "qualifiedName": "/TD_STG_DEV/PL_SCMSTO_INF",
+                            "nativeQualifiedName": "\"TD_STG_DEV\".\"PL_SCMSTO_INF\"",
+                            "owner": "TD_STG_DEV"
+                        },
+                        "schema": {
+                            "genericType": "TABLE",
+                            "tableBasedRepresentation": {
+                                "attributes": []
+                            }
+                        },
+                        "capabilityProperties": [
+                            {
+                                "name": "isProfileable",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                },
+                "outports": [
+                    {
+                        "name": "outTable",
+                        "type": "table",
+                        "vtype-ID": "$GRAPH.generated.tableconsumer1_outTable"
+                    }
+                ]
+            }
+        },
+        "datatransform1": {
+            "component": "com.sap.datatransform",
+            "metadata": {
+                "label": "Data Transform",
+                "x": 186,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "extensible": false,
+                "generation": 1,
+                "config": {
+                    "definition": {
+                        "nodeType": "ContainerNode",
+                        "inputs": [
+                            {
+                                "id": "0b872a3a-64fc-43a3-954f-be97b472f94c",
+                                "nodeType": "InPort",
+                                "name": "input1",
+                                "attributes": [
+                                    {
+                                        "id": "8b98a7f6-75f5-4444-8ce8-cea00ad081e4",
+                                        "name": "SCHEDULED_QUANTITY",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 17,
+                                        "scale": 3
+                                    },
+                                    {
+                                        "id": "51759a1c-9d33-4df0-a4b6-8a8b58165ebe",
+                                        "name": "ZK_GKMNG",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 17,
+                                        "scale": 3
+                                    },
+                                    {
+                                        "id": "465ef752-bf1a-4b8d-a496-d5bc5af83855",
+                                        "name": "ZK_WAMNG",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 17,
+                                        "scale": 3
+                                    },
+                                    {
+                                        "id": "b15050d7-8ae8-496d-b9aa-08031a69a73c",
+                                        "name": "EFFWR",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 17,
+                                        "scale": 2
+                                    },
+                                    {
+                                        "id": "348c06dc-319b-4e47-be49-1f5d089af221",
+                                        "name": "ZZWEMNG_EKET",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 17,
+                                        "scale": 3
+                                    },
+                                    {
+                                        "id": "d9dc0e37-d2fa-4e8f-b9b3-bdb4ad834510",
+                                        "name": "RCOUNT",
+                                        "datatype": "int32",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "274207eb-73d1-4bad-b805-9c24a6b018c4",
+                                        "name": "TIME_STAMP",
+                                        "datatype": "timestamp",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "62a3925d-8389-4296-94b4-4843cf05a53c",
+                                        "name": "EBELN",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "b8a1f8b5-9d45-41c7-90fa-e4b9ece0e024",
+                                        "name": "EBELP",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 5
+                                    },
+                                    {
+                                        "id": "4e1b6aff-a949-434d-af27-790fdb245750",
+                                        "name": "ETENR",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 4
+                                    },
+                                    {
+                                        "id": "4d30acf3-687b-4619-9caf-5e938a7d7bc2",
+                                        "name": "BSART",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 4
+                                    },
+                                    {
+                                        "id": "5ff47587-3c67-4789-bf13-cf927698bccf",
+                                        "name": "MATNR",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 40
+                                    },
+                                    {
+                                        "id": "5a5defda-2efb-489c-90ba-1d1a81f3e2d8",
+                                        "name": "WERKS",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 4
+                                    },
+                                    {
+                                        "id": "b8dff176-b322-48eb-a677-b0bfcd0d629a",
+                                        "name": "RESWK",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "92add711-f342-44c5-be6c-3ea4c0a6a6e8",
+                                        "name": "AEDAT",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 8
+                                    },
+                                    {
+                                        "id": "1d49dba4-c42d-4441-84da-50aeee6d9767",
+                                        "name": "EINDT",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 8
+                                    },
+                                    {
+                                        "id": "06f9d676-cb98-4760-adbb-17c0e985e6e0",
+                                        "name": "DOCUMENT_DATE",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 8
+                                    },
+                                    {
+                                        "id": "1c474741-3c8a-40f3-b5ef-2d74015f39bc",
+                                        "name": "BSGRU",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 3
+                                    },
+                                    {
+                                        "id": "a57d9efb-285d-4c80-8c29-a399130a0e14",
+                                        "name": "ELIKZ",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 1
+                                    },
+                                    {
+                                        "id": "3a313f8d-79d2-4619-ab83-a197be61b1ce",
+                                        "name": "LOEKZ",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 1
+                                    },
+                                    {
+                                        "id": "c7f1e287-1e8a-434d-8f76-b65410436a1c",
+                                        "name": "BEDNR",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "0767498a-d34f-425a-ad38-3da404f31016",
+                                        "name": "WADAT",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 8
+                                    },
+                                    {
+                                        "id": "095ec6cb-852e-4c31-96d8-7e9cd327df54",
+                                        "name": "VKORG",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 4
+                                    },
+                                    {
+                                        "id": "86b7cc2c-f0e1-4161-9a8d-236c69db8313",
+                                        "name": "ALLOC_QTY",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 22,
+                                        "scale": 3
+                                    }
+                                ],
+                                "UILayout": {
+                                    "x": 12,
+                                    "y": 12,
+                                    "height": 80,
+                                    "width": 80
+                                }
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "id": "8fc923ea-9f92-47c1-b9e8-6dfdce840c58",
+                                "nodeType": "OutPort",
+                                "name": "output1",
+                                "attributes": [
+                                    {
+                                        "id": "8d7edbc9-730f-4227-8621-fe2a874e0a15",
+                                        "name": "PO Number",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "8a7e2a3b-36de-430c-a680-f40039a84e27",
+                                        "name": "PO Item",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 5
+                                    },
+                                    {
+                                        "id": "fda5df7b-f3ca-4a1f-a703-a1119eb99499",
+                                        "name": "PO Schedule Line",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 4
+                                    },
+                                    {
+                                        "id": "0c4bc567-399d-4655-be92-e4f2db94da00",
+                                        "name": "Purchasing Doc. Type",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 4
+                                    },
+                                    {
+                                        "id": "f28dbf0d-873e-4947-a97c-4743139e4461",
+                                        "name": "Material",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 40
+                                    },
+                                    {
+                                        "id": "78821214-8f3a-49f5-afe3-31330239da43",
+                                        "name": "Supplying Plant",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "35bd247d-25bc-401c-a849-d5f8d9849f20",
+                                        "name": "Plant",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 4
+                                    },
+                                    {
+                                        "id": "50e17bb2-50a0-438a-8712-b633e02564a3",
+                                        "name": "Created On",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 8
+                                    },
+                                    {
+                                        "id": "1e6d0f8d-a858-4ad3-a045-cde48d78e6fd",
+                                        "name": "Requested Del Date",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 8
+                                    },
+                                    {
+                                        "id": "420f88f0-39b3-4f04-9380-2d611584acb7",
+                                        "name": "Document Date",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 8
+                                    },
+                                    {
+                                        "id": "f59a33d0-4d85-4510-9228-09ae93db7bb5",
+                                        "name": "Order Qty",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 17,
+                                        "scale": 3
+                                    },
+                                    {
+                                        "id": "ec1c15fa-41e6-471a-8cd9-6173a19478b4",
+                                        "name": "Delivered Quantity",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 17,
+                                        "scale": 3
+                                    },
+                                    {
+                                        "id": "23ff84e1-fa43-4d4f-b83a-389705eb8574",
+                                        "name": "Shipped Quantity",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 17,
+                                        "scale": 3
+                                    },
+                                    {
+                                        "id": "175bbe28-2d6a-46c6-a9eb-f1b3942561a5",
+                                        "name": "Goods Received Qty",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 17,
+                                        "scale": 3
+                                    },
+                                    {
+                                        "id": "16e98c96-ad78-42ac-8c6c-c90db1bb63ba",
+                                        "name": "Order Value",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 17,
+                                        "scale": 2
+                                    },
+                                    {
+                                        "id": "ae73d9a2-6ed6-4936-802a-889043dcdd8f",
+                                        "name": "Record Counter",
+                                        "datatype": "int32",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "b629ba54-3407-4694-b7d8-4942bb2addcf",
+                                        "name": "Order for Reason",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 3
+                                    },
+                                    {
+                                        "id": "55a0c760-92ff-48f2-a132-2e6412d85a78",
+                                        "name": "Cancel Reason",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "aa6c5757-6825-4e41-af3a-200d2fe687e7",
+                                        "name": "Delivery Completed",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 1
+                                    },
+                                    {
+                                        "id": "39b493a7-8408-4066-a461-3a919aa2267b",
+                                        "name": "Deletion Indicator",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 1
+                                    },
+                                    {
+                                        "id": "4a11577d-136d-4d3a-9edc-654e224542ef",
+                                        "name": "Goods Issue Date",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 8
+                                    },
+                                    {
+                                        "id": "ab6aee23-2c29-40fe-87ea-73e0910699a9",
+                                        "name": "Sales Organization",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 4
+                                    },
+                                    {
+                                        "id": "c9b1dc0a-bda6-4ca4-ad02-c224f5926c94",
+                                        "name": "Assigned Quantity by ARun",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 22,
+                                        "scale": 3
+                                    }
+                                ],
+                                "mode": "OVERWRITE",
+                                "UILayout": {
+                                    "x": 312,
+                                    "y": 12,
+                                    "height": 80,
+                                    "width": 80
+                                }
+                            }
+                        ],
+                        "nodes": [
+                            {
+                                "id": "b2d1214e-189c-4154-ae52-fb86fef18860",
+                                "type": "FilterNode",
+                                "nodeType": "FilterNode",
+                                "name": "Projection",
+                                "inputs": [
+                                    {
+                                        "id": "ada16fc4-82cc-48eb-99f3-ce05a776197d",
+                                        "name": "Projection_Input1",
+                                        "attributes": [
+                                            {
+                                                "id": "067b0adb-335d-46cd-96e7-5df37f1a1cff",
+                                                "name": "SCHEDULED_QUANTITY",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 17,
+                                                "scale": 3
+                                            },
+                                            {
+                                                "id": "31c6cd47-c397-42aa-bb6a-1b60355973db",
+                                                "name": "ZK_GKMNG",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 17,
+                                                "scale": 3
+                                            },
+                                            {
+                                                "id": "bcce3b76-65d5-4e96-a163-8ce25c1c7012",
+                                                "name": "ZK_WAMNG",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 17,
+                                                "scale": 3
+                                            },
+                                            {
+                                                "id": "c2e32f9b-b082-4b65-8cd2-7aa8c64bd3df",
+                                                "name": "EFFWR",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 17,
+                                                "scale": 2
+                                            },
+                                            {
+                                                "id": "8a096b3b-f5cb-4045-b27f-ce26146727a0",
+                                                "name": "ZZWEMNG_EKET",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 17,
+                                                "scale": 3
+                                            },
+                                            {
+                                                "id": "2e187018-7536-4322-9058-bb23519c6cb1",
+                                                "name": "RCOUNT",
+                                                "datatype": "int32",
+                                                "nullable": false
+                                            },
+                                            {
+                                                "id": "68b41e7b-e8e6-4752-b064-37c31979dce8",
+                                                "name": "TIME_STAMP",
+                                                "datatype": "timestamp",
+                                                "nullable": false
+                                            },
+                                            {
+                                                "id": "a2bf11c5-1060-4394-801c-4d37142207c9",
+                                                "name": "EBELN",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10
+                                            },
+                                            {
+                                                "id": "8c690c61-0470-4275-8f7a-c30c4d4dd957",
+                                                "name": "EBELP",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 5
+                                            },
+                                            {
+                                                "id": "72c109ff-971d-4858-9466-a06a378e5864",
+                                                "name": "ETENR",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 4
+                                            },
+                                            {
+                                                "id": "6bc84e1f-bf18-47b5-b6cc-abcc296884d3",
+                                                "name": "BSART",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 4
+                                            },
+                                            {
+                                                "id": "1a1e2e8e-718a-4708-8590-99b126fba342",
+                                                "name": "MATNR",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 40
+                                            },
+                                            {
+                                                "id": "0c67f784-b7f8-471b-be3c-ff6d8dbb98cd",
+                                                "name": "WERKS",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 4
+                                            },
+                                            {
+                                                "id": "a5db3018-b3de-4829-9052-6c236c619fa7",
+                                                "name": "RESWK",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10
+                                            },
+                                            {
+                                                "id": "0f92cffd-4b30-4c75-9686-6c37086f8c11",
+                                                "name": "AEDAT",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 8
+                                            },
+                                            {
+                                                "id": "9e686acf-105c-4a4f-b02d-9185425766bd",
+                                                "name": "EINDT",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 8
+                                            },
+                                            {
+                                                "id": "10625e4b-5c1e-4811-ac67-ab52c32c9c07",
+                                                "name": "DOCUMENT_DATE",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 8
+                                            },
+                                            {
+                                                "id": "0145acd8-6fae-4c01-ab5a-36558c5fa12b",
+                                                "name": "BSGRU",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 3
+                                            },
+                                            {
+                                                "id": "0a78f75c-ae0d-4847-99f7-c8fe54b89846",
+                                                "name": "ELIKZ",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 1
+                                            },
+                                            {
+                                                "id": "0b4c2966-5b51-44d6-807b-e66c1254564c",
+                                                "name": "LOEKZ",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 1
+                                            },
+                                            {
+                                                "id": "418ed098-b097-4813-b8d5-18b644000124",
+                                                "name": "BEDNR",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10
+                                            },
+                                            {
+                                                "id": "970ed6dc-c7c8-4d5e-87e4-5325b23abfab",
+                                                "name": "WADAT",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 8
+                                            },
+                                            {
+                                                "id": "6f293756-8a17-47e3-9d83-619bcbde933c",
+                                                "name": "VKORG",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 4
+                                            },
+                                            {
+                                                "id": "2f238daf-d0eb-403f-b403-075e1443a733",
+                                                "name": "ALLOC_QTY",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 22,
+                                                "scale": 3
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "id": "ac66aee2-4f99-4f2e-a814-318cee14abc9",
+                                        "name": "Projection_Output1",
+                                        "attributes": [
+                                            {
+                                                "id": "f9cc9bf3-6f42-42a6-977a-705b64992528",
+                                                "name": "PO Number",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10,
+                                                "expression": "\"EBELN\""
+                                            },
+                                            {
+                                                "id": "4fa08f16-be77-4340-8d6f-8c622972ad75",
+                                                "name": "PO Item",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 5,
+                                                "expression": "\"EBELP\""
+                                            },
+                                            {
+                                                "id": "f59d2804-cb6b-4afd-a8ad-35ed011fbbaf",
+                                                "name": "PO Schedule Line",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 4,
+                                                "expression": "\"ETENR\""
+                                            },
+                                            {
+                                                "id": "f4525109-744d-4d37-82eb-d8705de0ed05",
+                                                "name": "Purchasing Doc. Type",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 4,
+                                                "expression": "\"BSART\""
+                                            },
+                                            {
+                                                "id": "197257b7-f559-4add-b81e-00a359fbef4b",
+                                                "name": "Material",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 40,
+                                                "expression": "\"MATNR\""
+                                            },
+                                            {
+                                                "id": "bf1a1d50-f61d-4c4d-ace4-6d3a7e5b3297",
+                                                "name": "Supplying Plant",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10,
+                                                "expression": "\"RESWK\""
+                                            },
+                                            {
+                                                "id": "55f4c51d-b976-426e-b1cd-1326c776d4f5",
+                                                "name": "Plant",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 4,
+                                                "expression": "\"WERKS\""
+                                            },
+                                            {
+                                                "id": "deb0a26c-11bc-4171-af58-04657cb85e25",
+                                                "name": "Created On",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 8,
+                                                "expression": "\"AEDAT\""
+                                            },
+                                            {
+                                                "id": "2d39f29e-ef7f-4264-95fb-83dc9c747ec1",
+                                                "name": "Requested Del Date",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 8,
+                                                "expression": "\"EINDT\""
+                                            },
+                                            {
+                                                "id": "a7c97995-83ee-43a5-89fd-709b0af0e8bd",
+                                                "name": "Document Date",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 8,
+                                                "expression": "\"DOCUMENT_DATE\""
+                                            },
+                                            {
+                                                "id": "c6c811d3-c991-4b74-8a0c-905b1afe5376",
+                                                "name": "Order Qty",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 17,
+                                                "scale": 3,
+                                                "expression": "\"SCHEDULED_QUANTITY\""
+                                            },
+                                            {
+                                                "id": "8f544783-8388-4cf7-925b-cc86724e3cea",
+                                                "name": "Delivered Quantity",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 17,
+                                                "scale": 3,
+                                                "expression": "\"ZK_GKMNG\""
+                                            },
+                                            {
+                                                "id": "34909332-e282-4ccd-9a3a-6c8279923acf",
+                                                "name": "Shipped Quantity",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 17,
+                                                "scale": 3,
+                                                "expression": "\"ZK_WAMNG\""
+                                            },
+                                            {
+                                                "id": "18073096-030a-46a6-b492-41bde3f336b4",
+                                                "name": "Goods Received Qty",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 17,
+                                                "scale": 3,
+                                                "expression": "\"ZZWEMNG_EKET\""
+                                            },
+                                            {
+                                                "id": "b2891353-3a69-42f3-a8dd-831ad938b8cf",
+                                                "name": "Order Value",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 17,
+                                                "scale": 2,
+                                                "expression": "\"EFFWR\""
+                                            },
+                                            {
+                                                "id": "bfaccce1-ecdd-4c69-b3b9-1f14f4b8c449",
+                                                "name": "Record Counter",
+                                                "datatype": "int32",
+                                                "nullable": false,
+                                                "expression": "\"RCOUNT\""
+                                            },
+                                            {
+                                                "id": "bef1422c-9059-4a24-875d-8f6bc7ed77af",
+                                                "name": "Order for Reason",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 3,
+                                                "expression": "\"BSGRU\""
+                                            },
+                                            {
+                                                "id": "3079e21c-df39-4367-8de8-a06261ca89f2",
+                                                "name": "Cancel Reason",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10,
+                                                "expression": "\"BEDNR\""
+                                            },
+                                            {
+                                                "id": "39da8dae-9573-441b-8d4f-2ae4cafeb9ae",
+                                                "name": "Delivery Completed",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 1,
+                                                "expression": "\"ELIKZ\""
+                                            },
+                                            {
+                                                "id": "4e384f41-242c-422a-a2bc-e049038b6b94",
+                                                "name": "Deletion Indicator",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 1,
+                                                "expression": "\"LOEKZ\""
+                                            },
+                                            {
+                                                "id": "a79377ee-5948-48d9-8427-c7843eeab6f3",
+                                                "name": "Goods Issue Date",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 8,
+                                                "expression": "\"WADAT\""
+                                            },
+                                            {
+                                                "id": "dbba05ad-9340-46eb-b2bd-31342d28ac07",
+                                                "name": "Sales Organization",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 4,
+                                                "expression": "\"VKORG\""
+                                            },
+                                            {
+                                                "id": "4a0cd29c-a8bd-4bcb-9e36-dc5612d1aba9",
+                                                "name": "Assigned Quantity by ARun",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 22,
+                                                "scale": 3,
+                                                "expression": "\"ALLOC_QTY\""
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "UILayout": {
+                                    "x": 142,
+                                    "y": 12,
+                                    "height": 80,
+                                    "width": 120
+                                },
+                                "expression": "(TO_DATE(\"TIME_STAMP\") BETWEEN ADD_DAYS(CURRENT_DATE,-1) AND CURRENT_DATE)\nAND (TO_TIME(\"TIME_STAMP\") between '000000' AND '235959')"
+                            }
+                        ],
+                        "tableMappings": [
+                            {
+                                "source": "0b872a3a-64fc-43a3-954f-be97b472f94c",
+                                "target": "ada16fc4-82cc-48eb-99f3-ce05a776197d",
+                                "attributeMappings": [
+                                    {
+                                        "source": "8b98a7f6-75f5-4444-8ce8-cea00ad081e4",
+                                        "target": "067b0adb-335d-46cd-96e7-5df37f1a1cff"
+                                    },
+                                    {
+                                        "source": "51759a1c-9d33-4df0-a4b6-8a8b58165ebe",
+                                        "target": "31c6cd47-c397-42aa-bb6a-1b60355973db"
+                                    },
+                                    {
+                                        "source": "465ef752-bf1a-4b8d-a496-d5bc5af83855",
+                                        "target": "bcce3b76-65d5-4e96-a163-8ce25c1c7012"
+                                    },
+                                    {
+                                        "source": "b15050d7-8ae8-496d-b9aa-08031a69a73c",
+                                        "target": "c2e32f9b-b082-4b65-8cd2-7aa8c64bd3df"
+                                    },
+                                    {
+                                        "source": "348c06dc-319b-4e47-be49-1f5d089af221",
+                                        "target": "8a096b3b-f5cb-4045-b27f-ce26146727a0"
+                                    },
+                                    {
+                                        "source": "d9dc0e37-d2fa-4e8f-b9b3-bdb4ad834510",
+                                        "target": "2e187018-7536-4322-9058-bb23519c6cb1"
+                                    },
+                                    {
+                                        "source": "274207eb-73d1-4bad-b805-9c24a6b018c4",
+                                        "target": "68b41e7b-e8e6-4752-b064-37c31979dce8"
+                                    },
+                                    {
+                                        "source": "62a3925d-8389-4296-94b4-4843cf05a53c",
+                                        "target": "a2bf11c5-1060-4394-801c-4d37142207c9"
+                                    },
+                                    {
+                                        "source": "b8a1f8b5-9d45-41c7-90fa-e4b9ece0e024",
+                                        "target": "8c690c61-0470-4275-8f7a-c30c4d4dd957"
+                                    },
+                                    {
+                                        "source": "4e1b6aff-a949-434d-af27-790fdb245750",
+                                        "target": "72c109ff-971d-4858-9466-a06a378e5864"
+                                    },
+                                    {
+                                        "source": "4d30acf3-687b-4619-9caf-5e938a7d7bc2",
+                                        "target": "6bc84e1f-bf18-47b5-b6cc-abcc296884d3"
+                                    },
+                                    {
+                                        "source": "5ff47587-3c67-4789-bf13-cf927698bccf",
+                                        "target": "1a1e2e8e-718a-4708-8590-99b126fba342"
+                                    },
+                                    {
+                                        "source": "5a5defda-2efb-489c-90ba-1d1a81f3e2d8",
+                                        "target": "0c67f784-b7f8-471b-be3c-ff6d8dbb98cd"
+                                    },
+                                    {
+                                        "source": "b8dff176-b322-48eb-a677-b0bfcd0d629a",
+                                        "target": "a5db3018-b3de-4829-9052-6c236c619fa7"
+                                    },
+                                    {
+                                        "source": "92add711-f342-44c5-be6c-3ea4c0a6a6e8",
+                                        "target": "0f92cffd-4b30-4c75-9686-6c37086f8c11"
+                                    },
+                                    {
+                                        "source": "1d49dba4-c42d-4441-84da-50aeee6d9767",
+                                        "target": "9e686acf-105c-4a4f-b02d-9185425766bd"
+                                    },
+                                    {
+                                        "source": "06f9d676-cb98-4760-adbb-17c0e985e6e0",
+                                        "target": "10625e4b-5c1e-4811-ac67-ab52c32c9c07"
+                                    },
+                                    {
+                                        "source": "1c474741-3c8a-40f3-b5ef-2d74015f39bc",
+                                        "target": "0145acd8-6fae-4c01-ab5a-36558c5fa12b"
+                                    },
+                                    {
+                                        "source": "a57d9efb-285d-4c80-8c29-a399130a0e14",
+                                        "target": "0a78f75c-ae0d-4847-99f7-c8fe54b89846"
+                                    },
+                                    {
+                                        "source": "3a313f8d-79d2-4619-ab83-a197be61b1ce",
+                                        "target": "0b4c2966-5b51-44d6-807b-e66c1254564c"
+                                    },
+                                    {
+                                        "source": "c7f1e287-1e8a-434d-8f76-b65410436a1c",
+                                        "target": "418ed098-b097-4813-b8d5-18b644000124"
+                                    },
+                                    {
+                                        "source": "0767498a-d34f-425a-ad38-3da404f31016",
+                                        "target": "970ed6dc-c7c8-4d5e-87e4-5325b23abfab"
+                                    },
+                                    {
+                                        "source": "095ec6cb-852e-4c31-96d8-7e9cd327df54",
+                                        "target": "6f293756-8a17-47e3-9d83-619bcbde933c"
+                                    },
+                                    {
+                                        "source": "86b7cc2c-f0e1-4161-9a8d-236c69db8313",
+                                        "target": "2f238daf-d0eb-403f-b403-075e1443a733"
+                                    }
+                                ],
+                                "UILayout": {
+                                    "points": "92,52 142,52"
+                                }
+                            },
+                            {
+                                "source": "ac66aee2-4f99-4f2e-a814-318cee14abc9",
+                                "target": "8fc923ea-9f92-47c1-b9e8-6dfdce840c58",
+                                "attributeMappings": [
+                                    {
+                                        "source": "f9cc9bf3-6f42-42a6-977a-705b64992528",
+                                        "target": "8d7edbc9-730f-4227-8621-fe2a874e0a15"
+                                    },
+                                    {
+                                        "source": "4fa08f16-be77-4340-8d6f-8c622972ad75",
+                                        "target": "8a7e2a3b-36de-430c-a680-f40039a84e27"
+                                    },
+                                    {
+                                        "source": "f59d2804-cb6b-4afd-a8ad-35ed011fbbaf",
+                                        "target": "fda5df7b-f3ca-4a1f-a703-a1119eb99499"
+                                    },
+                                    {
+                                        "source": "f4525109-744d-4d37-82eb-d8705de0ed05",
+                                        "target": "0c4bc567-399d-4655-be92-e4f2db94da00"
+                                    },
+                                    {
+                                        "source": "197257b7-f559-4add-b81e-00a359fbef4b",
+                                        "target": "f28dbf0d-873e-4947-a97c-4743139e4461"
+                                    },
+                                    {
+                                        "source": "bf1a1d50-f61d-4c4d-ace4-6d3a7e5b3297",
+                                        "target": "78821214-8f3a-49f5-afe3-31330239da43"
+                                    },
+                                    {
+                                        "source": "55f4c51d-b976-426e-b1cd-1326c776d4f5",
+                                        "target": "35bd247d-25bc-401c-a849-d5f8d9849f20"
+                                    },
+                                    {
+                                        "source": "deb0a26c-11bc-4171-af58-04657cb85e25",
+                                        "target": "50e17bb2-50a0-438a-8712-b633e02564a3"
+                                    },
+                                    {
+                                        "source": "2d39f29e-ef7f-4264-95fb-83dc9c747ec1",
+                                        "target": "1e6d0f8d-a858-4ad3-a045-cde48d78e6fd"
+                                    },
+                                    {
+                                        "source": "a7c97995-83ee-43a5-89fd-709b0af0e8bd",
+                                        "target": "420f88f0-39b3-4f04-9380-2d611584acb7"
+                                    },
+                                    {
+                                        "source": "c6c811d3-c991-4b74-8a0c-905b1afe5376",
+                                        "target": "f59a33d0-4d85-4510-9228-09ae93db7bb5"
+                                    },
+                                    {
+                                        "source": "8f544783-8388-4cf7-925b-cc86724e3cea",
+                                        "target": "ec1c15fa-41e6-471a-8cd9-6173a19478b4"
+                                    },
+                                    {
+                                        "source": "34909332-e282-4ccd-9a3a-6c8279923acf",
+                                        "target": "23ff84e1-fa43-4d4f-b83a-389705eb8574"
+                                    },
+                                    {
+                                        "source": "18073096-030a-46a6-b492-41bde3f336b4",
+                                        "target": "175bbe28-2d6a-46c6-a9eb-f1b3942561a5"
+                                    },
+                                    {
+                                        "source": "b2891353-3a69-42f3-a8dd-831ad938b8cf",
+                                        "target": "16e98c96-ad78-42ac-8c6c-c90db1bb63ba"
+                                    },
+                                    {
+                                        "source": "bfaccce1-ecdd-4c69-b3b9-1f14f4b8c449",
+                                        "target": "ae73d9a2-6ed6-4936-802a-889043dcdd8f"
+                                    },
+                                    {
+                                        "source": "bef1422c-9059-4a24-875d-8f6bc7ed77af",
+                                        "target": "b629ba54-3407-4694-b7d8-4942bb2addcf"
+                                    },
+                                    {
+                                        "source": "3079e21c-df39-4367-8de8-a06261ca89f2",
+                                        "target": "55a0c760-92ff-48f2-a132-2e6412d85a78"
+                                    },
+                                    {
+                                        "source": "39da8dae-9573-441b-8d4f-2ae4cafeb9ae",
+                                        "target": "aa6c5757-6825-4e41-af3a-200d2fe687e7"
+                                    },
+                                    {
+                                        "source": "4e384f41-242c-422a-a2bc-e049038b6b94",
+                                        "target": "39b493a7-8408-4066-a461-3a919aa2267b"
+                                    },
+                                    {
+                                        "source": "a79377ee-5948-48d9-8427-c7843eeab6f3",
+                                        "target": "4a11577d-136d-4d3a-9edc-654e224542ef"
+                                    },
+                                    {
+                                        "source": "dbba05ad-9340-46eb-b2bd-31342d28ac07",
+                                        "target": "ab6aee23-2c29-40fe-87ea-73e0910699a9"
+                                    },
+                                    {
+                                        "source": "4a0cd29c-a8bd-4bcb-9e36-dc5612d1aba9",
+                                        "target": "c9b1dc0a-bda6-4ca4-ad02-c224f5926c94"
+                                    }
+                                ],
+                                "UILayout": {
+                                    "points": "262,52 312,52"
+                                }
+                            }
+                        ],
+                        "invalidMappings": []
+                    }
+                },
+                "additionalinports": [
+                    {
+                        "name": "input1",
+                        "type": "table",
+                        "isPropagated": true,
+                        "vtype-ID": "$GRAPH.generated.tableconsumer1_outTable"
+                    }
+                ],
+                "additionaloutports": [
+                    {
+                        "name": "output1",
+                        "type": "table",
+                        "vtype-ID": "$GRAPH.generated.datatransform1_output1"
+                    }
+                ]
+            }
+        },
+        "tofile1": {
+            "component": "com.sap.file.toFile",
+            "metadata": {
+                "label": "To File",
+                "x": 638.9999990463257,
+                "y": 27,
+                "height": 50,
+                "width": 50,
+                "generation": 1,
+                "config": {}
+            }
+        },
+        "tabletomessageconverter1": {
+            "component": "com.sap.util.tableToMessageConverter",
+            "metadata": {
+                "label": "Table To Message Converter",
+                "x": 355,
+                "y": 27,
+                "height": 50,
+                "width": 50,
+                "extensible": false,
+                "generation": 1,
+                "config": {
+                    "additionalProperties_csv": {
+                        "columnDelimiter": "|",
+                        "textDelimiterStyle": "Always",
+                        "csvHeaderIncluded": true,
+                        "csvHeaderIncludedBehavior": "Every batch"
+                    },
+                    "batchSize": 10000
+                },
+                "inports": [
+                    {
+                        "name": "inTable",
+                        "type": "table",
+                        "isPropagated": true,
+                        "vtype-ID": "$GRAPH.generated.datatransform1_output1"
+                    }
+                ]
+            }
+        },
+        "wiretap1": {
+            "component": "com.sap.util.wiretap",
+            "metadata": {
+                "label": "Wiretap",
+                "x": 454,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "ui": "dynpath",
+                "config": {}
+            }
+        },
+        "writefile1": {
+            "component": "com.sap.file.write",
+            "metadata": {
+                "label": "Actual File",
+                "x": 737.9999990463257,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "config": {
+                    "connection": {
+                        "configurationType": "Connection Management",
+                        "connectionID": "DI_TO_SFTP"
+                    },
+                    "pathMode": "Static (from configuration)",
+                    "path": "/Dev/DWC_ZSAPBW_AZ_STO_DETAILS.TXT",
+                    "mode": "Overwrite"
+                }
+            }
+        },
+        "writefile2": {
+            "component": "com.sap.file.write",
+            "metadata": {
+                "label": "Trigger File",
+                "x": 922.9999980926514,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "config": {
+                    "connection": {
+                        "configurationType": "Connection Management",
+                        "connectionID": "DI_TO_SFTP"
+                    },
+                    "pathMode": "Static (from configuration)",
+                    "path": "/Dev/DWC_ZSAPBW_AZ_STO_DETAILS.trg",
+                    "mode": "Overwrite",
+                    "joinBatches": false
+                }
+            }
+        },
+        "workflowterminator1": {
+            "component": "com.sap.dh.terminator",
+            "metadata": {
+                "label": "Workflow Terminator",
+                "x": 1107.999997138977,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "config": {}
+            }
+        }
+    },
+    "groups": [],
+    "connections": [
+        {
+            "metadata": {
+                "points": "141,52 181,52"
+            },
+            "src": {
+                "port": "outTable",
+                "process": "tableconsumer1"
+            },
+            "tgt": {
+                "port": "input1",
+                "process": "datatransform1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "310,52 350,52"
+            },
+            "src": {
+                "port": "output1",
+                "process": "datatransform1"
+            },
+            "tgt": {
+                "port": "inTable",
+                "process": "tabletomessageconverter1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "409,52 449,52"
+            },
+            "src": {
+                "port": "outMessage",
+                "process": "tabletomessageconverter1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "wiretap1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "578,52 605.9999995231628,52 605.9999995231628,61 633.9999990463257,61"
+            },
+            "src": {
+                "port": "out",
+                "process": "wiretap1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "tofile1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "692.9999990463257,52 732.9999990463257,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "tofile1"
+            },
+            "tgt": {
+                "port": "file",
+                "process": "writefile1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "861.9999990463257,43 889.9999985694885,43 889.9999985694885,52 917.9999980926514,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "writefile1"
+            },
+            "tgt": {
+                "port": "file",
+                "process": "writefile2"
+            }
+        },
+        {
+            "metadata": {
+                "points": "1046.9999980926514,43 1075,43 1075,52 1102.999997138977,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "writefile2"
+            },
+            "tgt": {
+                "port": "stop",
+                "process": "workflowterminator1"
+            }
+        }
+    ],
+    "inports": {},
+    "outports": {},
+    "metadata": {
+        "generation": 1
+    }
+}

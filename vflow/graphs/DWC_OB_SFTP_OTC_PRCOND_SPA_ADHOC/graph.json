@@ -1,0 +1,621 @@
+{
+    "iconsrc": "",
+    "properties": {},
+    "description": "Pricing Conditions SPA Interface Adhoc",
+    "processes": {
+        "tableconsumer1": {
+            "component": "com.sap.database.table.consumer.v2",
+            "metadata": {
+                "label": "Table Consumer",
+                "x": 17,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "extensible": false,
+                "generation": 1,
+                "config": {
+                    "service": "HANA_DB",
+                    "partitionType": "None",
+                    "serviceConnection": {
+                        "configurationType": "Configuration Manager",
+                        "connectionID": "DWC_TO_DI_TD_STG_DEV"
+                    },
+                    "source": {
+                        "remoteObjectReference": {
+                            "connection": {
+                                "id": "DWC_TO_DI_TD_STG_DEV",
+                                "type": "HANA_DB"
+                            },
+                            "name": "PL_OTC_PRCOND_SPA_INF",
+                            "remoteObjectType": "VIEW",
+                            "qualifiedName": "/TD_STG_DEV/PL_OTC_PRCOND_SPA_INF",
+                            "nativeQualifiedName": "\"TD_STG_DEV\".\"PL_OTC_PRCOND_SPA_INF\"",
+                            "owner": "TD_STG_DEV"
+                        },
+                        "schema": {
+                            "genericType": "TABLE",
+                            "tableBasedRepresentation": {
+                                "attributes": []
+                            }
+                        },
+                        "capabilityProperties": [
+                            {
+                                "name": "isProfileable",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                },
+                "outports": [
+                    {
+                        "name": "outTable",
+                        "type": "table",
+                        "vtype-ID": "$GRAPH.generated.tableconsumer1_outTable"
+                    }
+                ]
+            }
+        },
+        "datatransform1": {
+            "component": "com.sap.datatransform",
+            "metadata": {
+                "label": "Data Transform",
+                "x": 186,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "extensible": false,
+                "generation": 1,
+                "config": {
+                    "definition": {
+                        "nodeType": "ContainerNode",
+                        "inputs": [
+                            {
+                                "id": "203e6004-26ea-43bd-ac53-e881aadd50ae",
+                                "nodeType": "InPort",
+                                "name": "input1",
+                                "attributes": [
+                                    {
+                                        "id": "96518253-326d-40d1-aa3a-359e742b6843",
+                                        "name": "MATNR",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 40
+                                    },
+                                    {
+                                        "id": "f5b62cd1-5356-4fa1-b34a-cdca3d523fb2",
+                                        "name": "KBETR",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 17,
+                                        "scale": 2
+                                    },
+                                    {
+                                        "id": "b0aaac79-c913-44bf-a9f8-f28731bfef8a",
+                                        "name": "KONWA",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 5
+                                    },
+                                    {
+                                        "id": "c538e4bf-9cc3-4c71-9064-e20c027c3057",
+                                        "name": "TIME_STAMP",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 15,
+                                        "scale": 0
+                                    },
+                                    {
+                                        "id": "e30122c1-8915-49cb-bf87-33e2f40da8ee",
+                                        "name": "VALID_END",
+                                        "datatype": "date",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "69c85362-4cf1-4347-a85e-49dd6983f5a9",
+                                        "name": "VALID_START",
+                                        "datatype": "date",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "ca59846e-8a93-43e5-a207-149045cdc796",
+                                        "name": "BWKEY",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 4
+                                    }
+                                ],
+                                "UILayout": {
+                                    "x": 12,
+                                    "y": 12,
+                                    "height": 80,
+                                    "width": 80
+                                }
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "id": "53578497-1d69-4c26-8699-a514776724ee",
+                                "nodeType": "OutPort",
+                                "name": "output1",
+                                "attributes": [
+                                    {
+                                        "id": "064fbe19-7067-4f77-9429-f234279946b2",
+                                        "name": "Material",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 40
+                                    },
+                                    {
+                                        "id": "ea8bf37d-7c56-40c5-bff5-2621a5830986",
+                                        "name": "Plant",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 4
+                                    },
+                                    {
+                                        "id": "b655a836-b325-4c45-8387-3fe8c8ffddb9",
+                                        "name": "Validity End Date",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "ed08292c-3c2b-49e5-a062-c04d1c8387cf",
+                                        "name": "Validity Start Date",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "373410eb-55b9-475f-9c54-48df43f848b6",
+                                        "name": "Price",
+                                        "datatype": "decimal",
+                                        "nullable": false,
+                                        "precision": 17,
+                                        "scale": 2
+                                    },
+                                    {
+                                        "id": "afe84427-efaa-423a-807c-02343d9f3efc",
+                                        "name": "Units",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 5
+                                    }
+                                ],
+                                "mode": "OVERWRITE",
+                                "UILayout": {
+                                    "x": 312,
+                                    "y": 12,
+                                    "height": 80,
+                                    "width": 80
+                                }
+                            }
+                        ],
+                        "nodes": [
+                            {
+                                "id": "9f2a0c87-dd69-43f9-a5bb-8bf59ee5cd16",
+                                "type": "FilterNode",
+                                "nodeType": "FilterNode",
+                                "name": "Projection",
+                                "inputs": [
+                                    {
+                                        "id": "9936c864-6e19-4e9c-be01-28052890d565",
+                                        "name": "Projection_Input1",
+                                        "attributes": [
+                                            {
+                                                "id": "0e169552-128f-4ff3-9c2a-3f5b04e079b7",
+                                                "name": "MATNR",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 40
+                                            },
+                                            {
+                                                "id": "f95dd319-2622-45c0-af3d-d1674d4269c3",
+                                                "name": "KBETR",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 17,
+                                                "scale": 2
+                                            },
+                                            {
+                                                "id": "7ed8edb2-5a1b-45f4-88ce-04cca830599a",
+                                                "name": "KONWA",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 5
+                                            },
+                                            {
+                                                "id": "21b49ff1-c54e-4642-856c-aecd73644c1e",
+                                                "name": "TIME_STAMP",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 15,
+                                                "scale": 0
+                                            },
+                                            {
+                                                "id": "0176a28a-7247-4810-abfd-d6fb63cd8945",
+                                                "name": "VALID_END",
+                                                "datatype": "date",
+                                                "nullable": false
+                                            },
+                                            {
+                                                "id": "658dd00c-264e-45cf-b907-f783316d923b",
+                                                "name": "VALID_START",
+                                                "datatype": "date",
+                                                "nullable": false
+                                            },
+                                            {
+                                                "id": "c62a58a2-495e-42a5-be22-e33102289cc4",
+                                                "name": "BWKEY",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 4
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "id": "7366a54b-1299-4dfa-be48-804b7571f0e9",
+                                        "name": "Projection_Output1",
+                                        "attributes": [
+                                            {
+                                                "id": "cd879562-0e51-4428-8fa7-8ccf13139844",
+                                                "name": "Material",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 40,
+                                                "expression": "\"MATNR\""
+                                            },
+                                            {
+                                                "id": "63200527-a679-41e7-a951-04d341be75e1",
+                                                "name": "Plant",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 4,
+                                                "expression": "\"BWKEY\""
+                                            },
+                                            {
+                                                "id": "e46d8329-91fb-4ab7-bea4-39f16d567bee",
+                                                "name": "Validity End Date",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10,
+                                                "expression": "CONCAT(CONCAT(CONCAT(CONCAT(SUBSTRING(\"VALID_END\",6,2),'/'),SUBSTRING(\"VALID_END\",9,2)),'/'),SUBSTRING(\"VALID_END\",1,4))"
+                                            },
+                                            {
+                                                "id": "3b20e8aa-12e4-4998-9676-e3cff249516d",
+                                                "name": "Validity Start Date",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 10,
+                                                "expression": "CONCAT(CONCAT(CONCAT(CONCAT(SUBSTRING(\"VALID_START\",6,2),'/'),SUBSTRING(\"VALID_START\",9,2)),'/'),SUBSTRING(\"VALID_START\",1,4))"
+                                            },
+                                            {
+                                                "id": "b5ef1240-0b2b-46c8-b2e3-a0527b1d9beb",
+                                                "name": "Price",
+                                                "datatype": "decimal",
+                                                "nullable": false,
+                                                "precision": 17,
+                                                "scale": 2,
+                                                "expression": "\"KBETR\""
+                                            },
+                                            {
+                                                "id": "3875acd8-2a24-4f2d-a26c-903a093b104d",
+                                                "name": "Units",
+                                                "datatype": "string",
+                                                "nullable": false,
+                                                "length": 5,
+                                                "expression": "\"KONWA\""
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "UILayout": {
+                                    "x": 142,
+                                    "y": 12,
+                                    "height": 80,
+                                    "width": 120
+                                },
+                                "expression": "TO_DATE(TO_VARCHAR(TIME_STAMP)) BETWEEN ADD_DAYS(CURRENT_DATE,-1) AND CURRENT_DATE\r\n        and TO_TIME(TO_VARCHAR(TIME_STAMP)) between '000000' AND '235959'"
+                            }
+                        ],
+                        "tableMappings": [
+                            {
+                                "source": "203e6004-26ea-43bd-ac53-e881aadd50ae",
+                                "target": "9936c864-6e19-4e9c-be01-28052890d565",
+                                "attributeMappings": [
+                                    {
+                                        "source": "96518253-326d-40d1-aa3a-359e742b6843",
+                                        "target": "0e169552-128f-4ff3-9c2a-3f5b04e079b7"
+                                    },
+                                    {
+                                        "source": "f5b62cd1-5356-4fa1-b34a-cdca3d523fb2",
+                                        "target": "f95dd319-2622-45c0-af3d-d1674d4269c3"
+                                    },
+                                    {
+                                        "source": "b0aaac79-c913-44bf-a9f8-f28731bfef8a",
+                                        "target": "7ed8edb2-5a1b-45f4-88ce-04cca830599a"
+                                    },
+                                    {
+                                        "source": "c538e4bf-9cc3-4c71-9064-e20c027c3057",
+                                        "target": "21b49ff1-c54e-4642-856c-aecd73644c1e"
+                                    },
+                                    {
+                                        "source": "e30122c1-8915-49cb-bf87-33e2f40da8ee",
+                                        "target": "0176a28a-7247-4810-abfd-d6fb63cd8945"
+                                    },
+                                    {
+                                        "source": "69c85362-4cf1-4347-a85e-49dd6983f5a9",
+                                        "target": "658dd00c-264e-45cf-b907-f783316d923b"
+                                    },
+                                    {
+                                        "source": "ca59846e-8a93-43e5-a207-149045cdc796",
+                                        "target": "c62a58a2-495e-42a5-be22-e33102289cc4"
+                                    }
+                                ],
+                                "UILayout": {
+                                    "points": "92,52 142,52"
+                                }
+                            },
+                            {
+                                "source": "7366a54b-1299-4dfa-be48-804b7571f0e9",
+                                "target": "53578497-1d69-4c26-8699-a514776724ee",
+                                "attributeMappings": [
+                                    {
+                                        "source": "cd879562-0e51-4428-8fa7-8ccf13139844",
+                                        "target": "064fbe19-7067-4f77-9429-f234279946b2"
+                                    },
+                                    {
+                                        "source": "63200527-a679-41e7-a951-04d341be75e1",
+                                        "target": "ea8bf37d-7c56-40c5-bff5-2621a5830986"
+                                    },
+                                    {
+                                        "source": "e46d8329-91fb-4ab7-bea4-39f16d567bee",
+                                        "target": "b655a836-b325-4c45-8387-3fe8c8ffddb9"
+                                    },
+                                    {
+                                        "source": "3b20e8aa-12e4-4998-9676-e3cff249516d",
+                                        "target": "ed08292c-3c2b-49e5-a062-c04d1c8387cf"
+                                    },
+                                    {
+                                        "source": "b5ef1240-0b2b-46c8-b2e3-a0527b1d9beb",
+                                        "target": "373410eb-55b9-475f-9c54-48df43f848b6"
+                                    },
+                                    {
+                                        "source": "3875acd8-2a24-4f2d-a26c-903a093b104d",
+                                        "target": "afe84427-efaa-423a-807c-02343d9f3efc"
+                                    }
+                                ],
+                                "UILayout": {
+                                    "points": "262,52 312,52"
+                                }
+                            }
+                        ],
+                        "invalidMappings": []
+                    }
+                },
+                "additionalinports": [
+                    {
+                        "name": "input1",
+                        "type": "table",
+                        "isPropagated": true,
+                        "vtype-ID": "$GRAPH.generated.tableconsumer1_outTable"
+                    }
+                ],
+                "additionaloutports": [
+                    {
+                        "name": "output1",
+                        "type": "table",
+                        "vtype-ID": "$GRAPH.generated.datatransform1_output1"
+                    }
+                ]
+            }
+        },
+        "tabletomessageconverter1": {
+            "component": "com.sap.util.tableToMessageConverter",
+            "metadata": {
+                "label": "Table To Message Converter",
+                "x": 355,
+                "y": 27,
+                "height": 50,
+                "width": 50,
+                "extensible": false,
+                "generation": 1,
+                "config": {
+                    "additionalProperties_csv": {
+                        "columnDelimiter": ",",
+                        "textDelimiterStyle": "Always",
+                        "csvHeaderIncluded": true,
+                        "csvHeaderIncludedBehavior": "First batch"
+                    }
+                },
+                "inports": [
+                    {
+                        "name": "inTable",
+                        "type": "table",
+                        "isPropagated": true,
+                        "vtype-ID": "$GRAPH.generated.datatransform1_output1"
+                    }
+                ]
+            }
+        },
+        "wiretap1": {
+            "component": "com.sap.util.wiretap",
+            "metadata": {
+                "label": "Wiretap",
+                "x": 454,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "ui": "dynpath",
+                "config": {}
+            }
+        },
+        "tofile1": {
+            "component": "com.sap.file.toFile",
+            "metadata": {
+                "label": "To File",
+                "x": 638.9999990463257,
+                "y": 27,
+                "height": 50,
+                "width": 50,
+                "generation": 1,
+                "config": {}
+            }
+        },
+        "writefile1": {
+            "component": "com.sap.file.write",
+            "metadata": {
+                "label": "Actual File",
+                "x": 737.9999990463257,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "config": {
+                    "connection": {
+                        "configurationType": "Connection Management",
+                        "connectionID": "DI_TO_SFTP"
+                    },
+                    "pathMode": "Static (from configuration)",
+                    "path": "/Dev/DWC_PRCOND_SPA.CSV",
+                    "mode": "Overwrite"
+                }
+            }
+        },
+        "writefile2": {
+            "component": "com.sap.file.write",
+            "metadata": {
+                "label": "Trigger File",
+                "x": 922.9999980926514,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "config": {
+                    "connection": {
+                        "configurationType": "Connection Management",
+                        "connectionID": "DI_TO_SFTP"
+                    },
+                    "pathMode": "Static (from configuration)",
+                    "path": "/Dev/ DWC_PRCOND_SPA.trg",
+                    "mode": "Overwrite",
+                    "joinBatches": false
+                }
+            }
+        },
+        "workflowterminator1": {
+            "component": "com.sap.dh.terminator",
+            "metadata": {
+                "label": "Workflow Terminator",
+                "x": 1107.999997138977,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "config": {}
+            }
+        }
+    },
+    "groups": [],
+    "connections": [
+        {
+            "metadata": {
+                "points": "141,52 181,52"
+            },
+            "src": {
+                "port": "outTable",
+                "process": "tableconsumer1"
+            },
+            "tgt": {
+                "port": "input1",
+                "process": "datatransform1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "310,52 350,52"
+            },
+            "src": {
+                "port": "output1",
+                "process": "datatransform1"
+            },
+            "tgt": {
+                "port": "inTable",
+                "process": "tabletomessageconverter1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "409,52 449,52"
+            },
+            "src": {
+                "port": "outMessage",
+                "process": "tabletomessageconverter1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "wiretap1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "578,52 605.9999995231628,52 605.9999995231628,61 633.9999990463257,61"
+            },
+            "src": {
+                "port": "out",
+                "process": "wiretap1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "tofile1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "692.9999990463257,52 732.9999990463257,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "tofile1"
+            },
+            "tgt": {
+                "port": "file",
+                "process": "writefile1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "861.9999990463257,43 889.9999985694885,43 889.9999985694885,52 917.9999980926514,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "writefile1"
+            },
+            "tgt": {
+                "port": "file",
+                "process": "writefile2"
+            }
+        },
+        {
+            "metadata": {
+                "points": "1046.9999980926514,43 1074.9999976158142,43 1074.9999976158142,52 1102.999997138977,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "writefile2"
+            },
+            "tgt": {
+                "port": "stop",
+                "process": "workflowterminator1"
+            }
+        }
+    ],
+    "inports": {},
+    "outports": {},
+    "metadata": {
+        "generation": 1
+    }
+}

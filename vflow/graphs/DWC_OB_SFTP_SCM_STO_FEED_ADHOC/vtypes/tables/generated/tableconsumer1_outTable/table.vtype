@@ -1,0 +1,153 @@
+{
+	"name": "generated.tableconsumer1_outTable",
+	"description": "auto-generated generated.tableconsumer1_outTable",
+	"vflow.type": "table",
+	"rows": {
+		"components": [
+			{
+				"EBELN": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"EBELP": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_5"
+				}
+			},
+			{
+				"ETENR": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_4"
+				}
+			},
+			{
+				"BSART": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_4"
+				}
+			},
+			{
+				"MATNR": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_40"
+				}
+			},
+			{
+				"WERKS": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_4"
+				}
+			},
+			{
+				"RESWK": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"AEDAT": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_8"
+				}
+			},
+			{
+				"EINDT": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_8"
+				}
+			},
+			{
+				"DOCUMENT_DATE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_8"
+				}
+			},
+			{
+				"SCHEDULED_QUANTITY": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_17_3"
+				}
+			},
+			{
+				"ZK_GKMNG": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_17_3"
+				}
+			},
+			{
+				"ZK_WAMNG": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_17_3"
+				}
+			},
+			{
+				"EFFWR": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_17_2"
+				}
+			},
+			{
+				"BSGRU": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_3"
+				}
+			},
+			{
+				"ELIKZ": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_1"
+				}
+			},
+			{
+				"LOEKZ": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_1"
+				}
+			},
+			{
+				"ZZWEMNG_EKET": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_17_3"
+				}
+			},
+			{
+				"BEDNR": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"RCOUNT": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.int32"
+				}
+			},
+			{
+				"WADAT": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_8"
+				}
+			},
+			{
+				"VKORG": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_4"
+				}
+			},
+			{
+				"TIME_STAMP": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.timestamp"
+				}
+			},
+			{
+				"ALLOC_QTY": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_22_3"
+				}
+			}
+		]
+	}
+}

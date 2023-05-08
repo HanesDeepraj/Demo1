@@ -1,0 +1,45 @@
+{
+	"name": "generated.datatransform1_output1",
+	"description": "auto-generated",
+	"vflow.type": "table",
+	"rows": {
+		"components": [
+			{
+				"Material": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_40"
+				}
+			},
+			{
+				"Plant": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_4"
+				}
+			},
+			{
+				"Validity End Date": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"Validity Start Date": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"Price": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_17_2"
+				}
+			},
+			{
+				"Units": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_5"
+				}
+			}
+		]
+	}
+}

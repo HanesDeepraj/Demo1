@@ -1,0 +1,51 @@
+{
+	"name": "generated.tableconsumer1_outTable",
+	"description": "auto-generated generated.tableconsumer1_outTable",
+	"vflow.type": "table",
+	"rows": {
+		"components": [
+			{
+				"MATNR": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_40"
+				}
+			},
+			{
+				"KBETR": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_17_2"
+				}
+			},
+			{
+				"KONWA": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_5"
+				}
+			},
+			{
+				"TIME_STAMP": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.decimal_15_0"
+				}
+			},
+			{
+				"VALID_END": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.date"
+				}
+			},
+			{
+				"VALID_START": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.date"
+				}
+			},
+			{
+				"BWKEY": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_4"
+				}
+			}
+		]
+	}
+}
