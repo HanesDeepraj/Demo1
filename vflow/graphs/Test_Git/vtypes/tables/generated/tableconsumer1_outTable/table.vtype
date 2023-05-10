@@ -1,0 +1,69 @@
+{
+	"name": "generated.tableconsumer1_outTable",
+	"description": "auto-generated generated.tableconsumer1_outTable",
+	"vflow.type": "table",
+	"rows": {
+		"components": [
+			{
+				"Plant_Code": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_4"
+				}
+			},
+			{
+				"Name1": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_30"
+				}
+			},
+			{
+				"Name2": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_30"
+				}
+			},
+			{
+				"Plant_House_Street_Number": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_30"
+				}
+			},
+			{
+				"Plant_City_Name": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_25"
+				}
+			},
+			{
+				"Plant_Country_Code": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_3"
+				}
+			},
+			{
+				"CA_FACILITY_TYPE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_12"
+				}
+			},
+			{
+				"Count": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.int32"
+				}
+			},
+			{
+				"Plant_category": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_1"
+				}
+			},
+			{
+				"Legacy_Facility_Code": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_60"
+				}
+			}
+		]
+	}
+}
