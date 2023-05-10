@@ -1,12 +1,13 @@
 {
+    "properties": {},
     "description": "Test Git",
     "processes": {
         "tableconsumer1": {
             "component": "com.sap.database.table.consumer.v2",
             "metadata": {
                 "label": "Table Consumer",
-                "x": 129,
-                "y": 121,
+                "x": 17,
+                "y": 12,
                 "height": 80,
                 "width": 120,
                 "extensible": false,
@@ -57,8 +58,8 @@
             "component": "com.sap.util.tableToMessageConverter",
             "metadata": {
                 "label": "Table To Message Converter",
-                "x": 376,
-                "y": 136,
+                "x": 186,
+                "y": 27,
                 "height": 50,
                 "width": 50,
                 "extensible": false,
@@ -84,10 +85,42 @@
             "component": "com.sap.dh.terminator",
             "metadata": {
                 "label": "Workflow Terminator",
-                "x": 553,
-                "y": 191,
+                "x": 584.9999980926514,
+                "y": 12,
                 "height": 80,
                 "width": 120,
+                "generation": 1,
+                "config": {}
+            }
+        },
+        "writefile1": {
+            "component": "com.sap.file.write",
+            "metadata": {
+                "label": "Write File",
+                "x": 399.9999990463257,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "config": {
+                    "connection": {
+                        "configurationType": "Connection Management",
+                        "connectionID": "DI_TO_SFTP"
+                    },
+                    "pathMode": "Static (from configuration)",
+                    "path": "/Dev/Demo_File.csv",
+                    "mode": "Overwrite"
+                }
+            }
+        },
+        "tofile1": {
+            "component": "com.sap.file.toFile",
+            "metadata": {
+                "label": "To File",
+                "x": 300.9999990463257,
+                "y": 27,
+                "height": 50,
+                "width": 50,
                 "generation": 1,
                 "config": {}
             }
@@ -97,7 +130,7 @@
     "connections": [
         {
             "metadata": {
-                "points": "253,161 371,161"
+                "points": "141,52 181,52"
             },
             "src": {
                 "port": "outTable",
@@ -110,11 +143,37 @@
         },
         {
             "metadata": {
-                "points": "430,161 489,161 489,231 548,231"
+                "points": "240,52 267.99999952316284,52 267.99999952316284,61 295.9999990463257,61"
             },
             "src": {
                 "port": "outMessage",
                 "process": "tabletomessageconverter1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "tofile1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "354.9999990463257,52 394.9999990463257,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "tofile1"
+            },
+            "tgt": {
+                "port": "file",
+                "process": "writefile1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "523.9999990463257,43 551.9999985694885,43 551.9999985694885,52 579.9999980926514,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "writefile1"
             },
             "tgt": {
                 "port": "stop",
@@ -124,7 +183,6 @@
     ],
     "inports": {},
     "outports": {},
-    "properties": {},
     "metadata": {
         "generation": 1
     }
